@@ -1,0 +1,10 @@
+<% if flash[:error] %>
+  <%= flash[:error] %>
+  <% flash.clear %>
+<% end %>
+
+<%= form_for @user, url: login_path do |f| %>
+  Username: <%= f.text_field :name %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit "Log In" %>
+<% end %>
